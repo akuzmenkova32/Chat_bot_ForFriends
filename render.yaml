@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: tusa-planner-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.main
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: SECRET_TOKEN
+        sync: false
+      - key: TZ
+        value: Europe/Berlin
